@@ -78,6 +78,7 @@ exports.editUrlInfo = async (req, res, next) => {
 				req.account.bids[idx].log = undefined
 				createProcess(req.account.bids[idx])
 			}else if (req.body.state === 'stop') {
+				req.account.bids[idx].log = undefined
 				try {
 					req.account.bids[idx].process.kill()
 				} catch (err) {}

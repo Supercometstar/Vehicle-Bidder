@@ -31,7 +31,7 @@ const UrlInputModal = ({ open, handleClose }) => {
 			open={open}
 			onClose={handleClose}
 		>
-			<DialogTitle id="alert-dialog-title" className='animation-1' sx={{ transform: 'translateX(0)' }}>
+			<DialogTitle id="alert-dialog-title" sx={{ transform: 'translateX(0)' }}>
 	          	Add New Info
 	        </DialogTitle>
 			<DialogContent sx={{ pb: 1 }}>
@@ -45,8 +45,8 @@ const UrlInputModal = ({ open, handleClose }) => {
 				</Box>
 			</DialogContent>
 			<DialogActions>
-				<Button onClick={handleAddUrlInfo} className='button-29' sx={{ color: 'white' }}>Add</Button>
-				<Button onClick={handleClose} autoFocus>
+				<Button onClick={handleAddUrlInfo} sx={{ color: 'white', bgcolor: 'black' }}>Add</Button>
+				<Button onClick={handleClose} sx={{ color: 'black' }}>
 					Cancel
 				</Button>
 			</DialogActions>

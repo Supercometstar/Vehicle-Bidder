@@ -50,27 +50,30 @@ export default function CredentialsSignInPage() {
   }, [ dispatch, navigate ])
 
   return (
-    <Container maxWidth='xs' sx={{ border: '1px solid rgb(180, 180, 180)', p: 5, mt: 5, borderRadius: '5px' }}>
-      <Box sx={{ alignItems: 'center', flexDirection: 'column', display: 'flex' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'left', width: '100%' }}>
-          <Avatar sx={{ mr: 1 }} src='/assets/images/favicon.png' variant='rounded' />          
-          <Typography className='animation-1' variant='h4' sx={{ pt: 1, fontWeight: 'bold' }}>Vehicle Bidder</Typography>
-        </Box>      
-        <Box sx={{ mt: 2, width: '100%', textAlign: 'center' }}>
-          <Typography variant='body2' sx={{ textAlign: 'left' }}>SIGN IN WITH EMAIL</Typography>
-          <TextField name='email' sx={{ width: '100%', mb: 2, '& input': { pt: 1.5, pb: 1.5 }, '& label': { mt: -0.5 } }} onChange={(e) => { handleChange(e, setEmail) }} />
+    <>
+      <Container maxWidth='xs' sx={{ border: '1px solid rgb(180, 180, 180)', p: 5, mt: 5, borderRadius: '5px', bgcolor: 'white' }}>
+        <Box sx={{ alignItems: 'center', flexDirection: 'column', display: 'flex' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'left', width: '100%' }}>
+            <Avatar sx={{ mr: 1 }} src='/assets/images/favicon.png' variant='rounded' />          
+            <Typography variant='h4' sx={{ pt: 1, fontWeight: 'bold' }}>Vehicle Bidder</Typography>
+          </Box>      
+          <Box sx={{ mt: 2, width: '100%', textAlign: 'center' }}>
+            <Typography variant='body2' sx={{ textAlign: 'left' }}>SIGN IN WITH EMAIL</Typography>
+            <TextField name='email' sx={{ width: '100%', mb: 2, '& input': { pt: 1.5, pb: 1.5 }, '& label': { mt: -0.5 } }} onChange={(e) => { handleChange(e, setEmail) }} />
 
-          <Typography variant='body2' sx={{ textAlign: 'left' }}>PASSWORD</Typography>
-          <TextField name='password' sx={{ width: '100%', '& input': { pt: 1.5, pb: 1.5 }, '& label': { mt: -0.5 } }} onChange={(e) => { handleChange(e, setPassword) }} />
+            <Typography variant='body2' sx={{ textAlign: 'left' }}>PASSWORD</Typography>
+            <TextField name='password' type='password' sx={{ width: '100%', '& input': { pt: 1.5, pb: 1.5 }, '& label': { mt: -0.5 } }} onChange={(e) => { handleChange(e, setPassword) }} />
 
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-            <Checkbox ref={checkboxRef} />
-            <Typography variant='body2' sx={{ cursor: 'pointer' }} onClick={() => {checkboxRef.current.children[0].click()}}>Remember me</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <Checkbox ref={checkboxRef} />
+              <Typography variant='body2' sx={{ cursor: 'pointer' }} onClick={() => {checkboxRef.current.children[0].click()}}>Remember me</Typography>
+            </Box>
+
+            <Button variant='contained' disableElevation sx={{ width: '80%', pt: 1, pb: 1, bgcolor: 'black' }} onClick={signIn} >Sign In</Button>
           </Box>
-
-          <Button className='button-85' variant='contained' disableElevation sx={{ width: '70%', pt: 1, pb: 1 }} onClick={signIn} >Sign In</Button>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+      <Box sx={{ position: 'absolute', left: 0, top: 0, width: '100vw', height: '100vh', bgcolor: 'rgb(245, 245, 245)', zIndex: -1000 }} />
+    </>
   )
 }

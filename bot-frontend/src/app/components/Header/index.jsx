@@ -47,8 +47,8 @@ const Header = ({ handleOpenViewer }) => {
 				<Typography variant='h5' sx={{ pl: 3, mt: 1, textAlign: 'left', width: '100%', boxSizing: 'border-box' }}>Vehicle Automatic Bidder</Typography>
 			</Grid>
 			<Grid item size={6} sx={{ justifyContent: 'right', display: 'flex', alignItems: 'center' }}>
-				<Button className='button-85' onClick={handleOpenViewer} sx={{ display: selectedBox.state===undefined?'none':'block', mr: 4, color: 'white' }}>View Log</Button>
-				<Button className='button-85' onClick={handleChange} sx={{ display: selectedBox.state===undefined?'none':'block', color: 'white' }} >{selectedBox.state==='running'?'Stop':'Start'}</Button>
+				<Button onClick={handleOpenViewer} sx={{ display: selectedBox.state===undefined?'none':'block', mr: 4, color: 'white', bgcolor: 'gray' }}>View Log</Button>
+				<Button onClick={handleChange} sx={{ display: selectedBox.state===undefined?'none':'block', color: 'white', bgcolor: 'gray' }} >{selectedBox.state==='running'?'Stop':'Start'}</Button>
 				<Avatar sx={{ bgcolor: blue[500], mr: 3, ml: 3 }}>{email[0].toUpperCase()}</Avatar>
 				<IconButton aria-label="delete" size="middle" onClick={handleLogout}>
 				  	<LogoutIcon fontSize="inherit" />
