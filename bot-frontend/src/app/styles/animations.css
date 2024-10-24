@@ -1,0 +1,36 @@
+.animation-1 {
+  transform: translateX(-48px);
+  padding: 0 48px;
+  color: #ffffff;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+}
+    
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 270px;
+  }
+  100% {
+    background-position: 270px;
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
