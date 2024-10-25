@@ -9,6 +9,7 @@ const { delay, makeLog } = require('./functions')
 const bidListener = async (browser, url, amount) => {
 	
 	const page = await browser.newPage()
+	process.send('checkVehicle')
 	try{
 		await page.goto(url)
 	} catch {
@@ -18,8 +19,6 @@ const bidListener = async (browser, url, amount) => {
 	}
 
 	let epoch = 0
-	
-	process.send('finding')
 
 	while (true) {
 		epoch ++
@@ -31,14 +30,15 @@ const bidListener = async (browser, url, amount) => {
 		btnType = await checkBtn(page, 'edit', true)?'edit':btnType
 		let end = Date.now()
 
+		if (!await getBidAmount(page, amount)) break
+
 		if (!btnType) {
+			process.send('finding')
 			makeLog(logs.checkBtn(epoch))
 			await reload(page)
 			let end = Date.now()
 			continue
 		}
-
-		if (!await getBidAmount(page, amount)) break
 
 		if (!await processBid(page, btnType, amount)) break
 
@@ -49,7 +49,6 @@ const bidListener = async (browser, url, amount) => {
 		break
 	}
 	process.send('failed')
-	process.send('end')
 	process.exit()
 
 }

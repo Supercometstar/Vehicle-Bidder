@@ -5,6 +5,7 @@ import { Box, Dialog, DialogTitle, DialogActions, DialogContent, Typography, Tex
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import SyncIcon from '@mui/icons-material/Sync'
 import CircleIcon from '@mui/icons-material/Circle'
+import CloseIcon from '@mui/icons-material/Close'
 
 import { SelectBoxContext } from 'app/contexts/SelectBox.context'
 
@@ -43,18 +44,32 @@ const LogViewerModal = ({ open, handleClose }) => {
 				</Box>
 				<Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
 					{
-						selectedBox.log==='finding'?<SyncIcon sx={{ animation: 'rotate-animation 1s linear infinite' }} />
+						selectedBox.log==='checkVehicle'?<SyncIcon sx={{ animation: 'rotate-animation 1s linear infinite' }} />
 						:[undefined, 'open', 'login'].includes(selectedBox.log)?<CircleIcon />
+						:['invalidUrl', 'amountError'].includes(selectedBox.log)?<CloseIcon sx={{ color: 'red' }} />
 						:<CheckCircleIcon color='success' />
 					}
-					<Typography>Find bid button...</Typography>
+					<Typography>Checking vehicle...</Typography>
 				</Box>
 				<Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
 					{
-						[undefined, 'open', 'login', 'finding'].includes(selectedBox.log)?<CircleIcon />
+						selectedBox.log==='finding'?<SyncIcon sx={{ animation: 'rotate-animation 1s linear infinite' }} />
+						:[undefined, 'open', 'login', 'checkVehicle', 'invalidUrl', 'amountError'].includes(selectedBox.log)?<CircleIcon />
 						:<CheckCircleIcon color='success' />
 					}
-					<Typography>End. See vehicle</Typography>
+					<Typography>Finding bid button...</Typography>
+				</Box>
+				<Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+					{
+						[undefined, 'open', 'login', 'checkVehicle', 'invalidUrl', 'amountError', 'finding'].includes(selectedBox.log)?<CircleIcon />
+						:<CheckCircleIcon color='success' />
+					}
+					<Typography>
+						{
+							selectedBox.state==='failed'?'Failed'
+							:'Success'
+						}
+					</Typography>
 				</Box>
 
 			</DialogContent>

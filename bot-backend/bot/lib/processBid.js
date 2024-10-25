@@ -16,7 +16,7 @@ const processBid = async (page, type, amount) => {
 
 		await delay(1000)
 
-		// await page.click(`xpath///button[contains(@class,"ant-btn-default")]/span[contains(text(), "${labels[type]}")]`)
+		await page.click(`xpath///button[contains(@class,"ant-btn-default")]/span[contains(text(), "${labels[type]}")]`)
 		
 		return true
 	}catch {

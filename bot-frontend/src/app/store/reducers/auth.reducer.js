@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  // email: null,
-  // token: null,
-  // isAuthenticated: false,
-  email: 'null',
-  token: 'null',
-  isAuthenticated: true,
+  email: null,
+  token: null,
+  isAuthenticated: false,
+  // email: 'null',
+  // token: 'null',
+  // isAuthenticated: true,
 };
 
 const authSlice = createSlice({

@@ -8,7 +8,7 @@ const getBidAmount = async (page, amount) => {
 		const amountContent = await amountBox.getProperty('textContent')
 		const amountText = await amountContent.jsonValue()
 		const current = Number(amountText.slice(1).replace(',', ''))
-
+		
 		if (amount <= current) {
 			makeLog(logs.bigAmount(amount, current))
 			process.send('amountError')
@@ -20,6 +20,7 @@ const getBidAmount = async (page, amount) => {
 
 	}catch {
 		makeLog(logs.failedGetAmount)
+		process.send('amountError')
 		return false
 	}
 

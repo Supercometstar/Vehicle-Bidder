@@ -40,6 +40,7 @@ exports.isAuth = async (req, res, next) => {
     			return next()
     		}
     	}
+    	console.log('aaaa', accounts, parsedToken)
     	return res.json({
     		message: 'failed'
     	})

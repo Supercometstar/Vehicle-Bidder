@@ -62,7 +62,7 @@ const Bot = () => {
 					</Paper>
 				</Box>
 			</Box>
-			<Fab className='button-86' sx={{ position: 'absolute', right: '50px', bottom: '50px' }} onClick={() => {setUrlInputModalOpen(true)}}>
+			<Fab color='primary' sx={{ position: 'absolute', right: '50px', bottom: '50px' }} onClick={() => {setUrlInputModalOpen(true)}}>
 		        <AddIcon />
 		    </Fab>
 		    <UrlInputModal open={urlInputModalOpen} handleClose={() => { setUrlInputModalOpen(false) }} />
