@@ -37,7 +37,7 @@ const UrlInputModal = ({ open, handleClose }) => {
 			<DialogContent sx={{ pb: 1 }}>
 				<Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
 					<Typography sx={{ minWidth: '80px', textAlign: 'right', mr: 2 }}>URL: </Typography>
-					<TextField sx={{ '& input': { p: 1 }, width: '300px' }} onChange={(e) => handleChange(e, setUrl)} />
+					<TextField sx={{ '& input': { p: 1 }, width: '700px' }} onChange={(e) => handleChange(e, setUrl)} />
 				</Box>
 				<Box sx={{ display: 'flex', alignItems: 'center' }}>
 					<Typography sx={{ minWidth: '80px', textAlign: 'right', mr: 2 }}>PRICE: </Typography>
