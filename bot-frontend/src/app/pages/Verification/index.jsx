@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { Container, Grid, Box, Typography, TextField, Button, Avatar, FormControl, OutlinedInput } from '@mui/material'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import { blue } from '@mui/material/colors'
+import { Container, Box, Typography, TextField, Button, Avatar } from '@mui/material'
 
 import { verify } from 'app/store/actions/auth.action'
 import { show } from 'app/store/reducers/notification.reducer'

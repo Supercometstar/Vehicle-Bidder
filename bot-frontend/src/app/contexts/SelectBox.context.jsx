@@ -14,6 +14,7 @@ export const SelectBoxProvider = ({ children }) => {
 				if (item.id === selectedBox.id) {
 					setSelectedBox(item)
 				}
+				return 0
 			})
 		}
 	}, [ urlInfos ])

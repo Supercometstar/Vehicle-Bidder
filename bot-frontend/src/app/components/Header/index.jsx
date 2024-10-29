@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { Grid2 as Grid, Typography, IconButton, Chip, Avatar, Button } from '@mui/material'
+import { Grid2 as Grid, Typography, IconButton, Avatar, Button } from '@mui/material'
 import { blue } from '@mui/material/colors'
 import LogoutIcon from '@mui/icons-material/Logout'
 

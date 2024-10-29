@@ -1,7 +1,6 @@
-import { useState, useContext } from 'react'
-import { useDispatch } from 'react-redux'
+import { useContext } from 'react'
 
-import { Box, Dialog, DialogTitle, DialogActions, DialogContent, Typography, TextField, Button,  } from '@mui/material'
+import { Box, Dialog, DialogContent, Typography } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import SyncIcon from '@mui/icons-material/Sync'
 import CircleIcon from '@mui/icons-material/Circle'
@@ -9,16 +8,9 @@ import CloseIcon from '@mui/icons-material/Close'
 
 import { SelectBoxContext } from 'app/contexts/SelectBox.context'
 
-import { getUrlInfo, addUrlInfo } from 'app/store/actions/bid.action'
-import { show } from 'app/store/reducers/notification.reducer'
-
 const LogViewerModal = ({ open, handleClose }) => {
 
-	const dispatch = useDispatch()
-
-	const [ url, setUrl ] = useState('')
-	const [ price, setPrice ] = useState(0)
-	const { selectedBox, setSelectedBox } = useContext(SelectBoxContext)
+	const { selectedBox } = useContext(SelectBoxContext)
 
 	return (
 		<Dialog
