@@ -1,3 +1,8 @@
+const loginInfo = {
+	username: 'sales@drivetitanmotors.com'
+	password: 'SellCars2023!'
+}
+
 const closePages = {
 	count: 0
 }
@@ -20,5 +25,6 @@ const logs = {
 
 module.exports = {
 	logs,
-	closePages
+	closePages,
+	loginInfo
 }

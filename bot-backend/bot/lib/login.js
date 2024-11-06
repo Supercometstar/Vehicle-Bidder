@@ -1,4 +1,4 @@
-const { logs } = require('./config')
+const { logs, loginInfo } = require('./config')
 const { makeLog } = require('./functions')
 
 const login = async (browser) => {
@@ -12,8 +12,8 @@ const login = async (browser) => {
 
 	await page.waitForSelector('[data-testid="sign-in-page-email-field"]')
 
-	await page.type('[data-testid="sign-in-page-email-field"]', 'sales@drivetitanmotors.com')
-	await page.type('[data-testid="sign-in-page-password-field"]', 'SellCars2023!')
+	await page.type('[data-testid="sign-in-page-email-field"]', loginInfo.username)
+	await page.type('[data-testid="sign-in-page-password-field"]', loginInfo.password)
 	await page.click('[aria-label="Accept All"]')
 	await page.click('[data-testid="sign-in-page-sign-in-button"]')
 

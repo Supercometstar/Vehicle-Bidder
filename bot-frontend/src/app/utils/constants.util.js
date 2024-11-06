@@ -1,1 +1,1 @@
-export const baseURL = 'http://ec2-54-177-155-234.us-west-1.compute.amazonaws.com:4000/'
+export const baseURL = `http://${window.location.hostname}:4000/`
