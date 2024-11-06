@@ -27,20 +27,4 @@ Vehicle Automatic Bidder is a comprehensive system designed to automate the bidd
 **Getting Started**
 -------------------
 
-To run the Vehicle Automatic Bidder system, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Install the required dependencies by running `npm install` in the project root directory.
-3. Start the system by running `npm start`.
-
-**Run Command**
----------------
-
-`npm start`
-
-This command will start the front-end, back-end, and engine components, and the system will be ready to use.
-
-**Note**
---------
-
-Make sure to configure the system settings and bidding parameters before running the system. Refer to the documentation for more information on configuration and usage.
+run `start.bat` file.

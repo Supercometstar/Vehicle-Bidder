@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid')
 const spawn = require('child_process').spawn
 
 const createProcess = (info) => {
-	const child = spawn('node', [ './bot/index.js', info.url, info.amount ], {
+	const child = spawn('../bin/node.exe', [ './bot/index.js', info.url, info.amount ], {
 		stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
 	  	cwd: process.cwd(),
 	  	env: process.env,

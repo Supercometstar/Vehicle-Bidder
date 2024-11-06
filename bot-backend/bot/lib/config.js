@@ -1,6 +1,6 @@
 const loginInfo = {
-	username: 'sales@drivetitanmotors.com'
-	password: 'SellCars2023!'
+	username: 'sales@drivetitanmotors.com',
+	password: 'CarsforSale2024!'
 }
 
 const closePages = {
